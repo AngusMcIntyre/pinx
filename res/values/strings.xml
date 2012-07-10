@@ -4,5 +4,10 @@
     <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_master_pin">PinSafe</string>
+    <string name="add_pin">Add new PIN</string>
+    <string name="enter_master_pin">Enter master PIN</string>
+    <string name="pin_restriction_tip">4 digits only. Don\'t forget it!</string>
+    <string name="go_to_pins">Go</string>
+    <string name="title_activity_main">MainActivity</string>
 
 </resources>

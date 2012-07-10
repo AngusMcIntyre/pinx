@@ -1,16 +1,31 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top|center"
+    android:layout_marginTop="20dp"
+    android:orientation="vertical"
     tools:context=".MasterPinActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/edittext_masterpin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:padding="@dimen/padding_medium"
-        android:text="@string/hello_world"
-        tools:context=".MasterPinActivity" />
+        android:layout_gravity="center"
+        android:hint="@string/enter_master_pin"
+        android:inputType="numberDecimal"
+        android:maxLength="4">
+		<requestFocus/>
+	</EditText>
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textView_tip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:padding="@dimen/padding_medium"
+        android:text="@string/pin_restriction_tip"
+        tools:context=".MasterPinActivity" >
+    </TextView>
+
+</LinearLayout>
