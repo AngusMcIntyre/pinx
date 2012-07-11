@@ -7,7 +7,10 @@
     <string name="add_pin">Add new PIN</string>
     <string name="enter_master_pin">Enter master PIN</string>
     <string name="pin_restriction_tip">4 digits only. Don\'t forget it!</string>
-    <string name="go_to_pins">Go</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_add_pin">Add New Pin</string>
+    <string name="delete_all_pins">Remove All</string>
+    <string name="add_pin_addhint">PIN Description</string>
+    <string name="add_pin_valuehint">PIN Value</string>
 
 </resources>
