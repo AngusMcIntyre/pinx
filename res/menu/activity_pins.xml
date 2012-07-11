@@ -3,4 +3,5 @@
         android:title="@string/add_pin"
         android:orderInCategory="100"
         android:showAsAction="ifRoom|withText" />
+    <item android:id="@+id/menu_deleteall" android:title="@string/delete_all_pins"></item>
 </menu>

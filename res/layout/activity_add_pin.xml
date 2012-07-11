@@ -1,0 +1,37 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:layout_margin="@dimen/padding_large"
+    android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/editText_pinlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/add_pin_addhint"
+            android:inputType="text"
+            android:maxLength="20" 
+            android:imeOptions="actionNext"/>
+        <requestFocus />
+        <EditText
+            android:id="@+id/editText_pinvalue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/add_pin_valuehint"
+            android:inputType="number"
+            android:maxLength="4"
+            android:imeOptions="actionDone">
+        </EditText>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:onClick="onSubmit"
+            android:text="@android:string/ok" />
+
+</LinearLayout>
