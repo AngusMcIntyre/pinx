@@ -3,8 +3,11 @@ package gus.apps.pinsafe;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.TextView.OnEditorActionListener;
 
 /**
  * @author angus.mcintyre
@@ -16,6 +19,15 @@ public class AddPinActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_pin);
+        
+        EditText t = (EditText)findViewById(R.id.editText_pinvalue);
+        t.setOnEditorActionListener(new OnEditorActionListener(){
+
+			public boolean onEditorAction(TextView arg0, int arg1, KeyEvent arg2) {
+				onSubmit(arg0);
+				return false;
+			}
+        });
     }   
     
     public void onSubmit(View view){

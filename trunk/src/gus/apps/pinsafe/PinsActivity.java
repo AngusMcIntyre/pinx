@@ -66,13 +66,6 @@ public class PinsActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_pins, menu);
         return true;
     }
-    
-    @Override
-	protected void onStop() {
-		// TODO Auto-generated method stub
-		super.onStop();
-		super.finish();
-	}
 
 	@Override
     public boolean onOptionsItemSelected(MenuItem item) {
