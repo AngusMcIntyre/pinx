@@ -12,5 +12,7 @@
     <string name="delete_all_pins">Remove All</string>
     <string name="add_pin_addhint">PIN Description</string>
     <string name="add_pin_valuehint">PIN Value</string>
+    <string name="menu_deletepin">Delete PIN</string>
+    <string name="menu_title_pinoptions">PIN Options</string>
 
 </resources>
