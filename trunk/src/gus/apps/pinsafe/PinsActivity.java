@@ -6,9 +6,13 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -46,6 +50,17 @@ public class PinsActivity extends Activity {
         ListView lv = (ListView)findViewById(R.id.listview_pins);
         mAdapter = new ArrayAdapter<Pin>(this, android.R.layout.simple_list_item_1, allPins);
         lv.setAdapter(mAdapter);
+        lv.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            public boolean onItemLongClick(AdapterView<?> av, View v, int pos, long id) {
+                return PinsActivity.this.ShowPinOptions(mAdapter.getItem(pos));
+            }
+        });
+        
+        this.registerForContextMenu(lv); //make sure we get context menu event
+    }
+    
+    boolean ShowPinOptions(Pin pin){
+    	return false;
     }
 
     @Override
@@ -84,8 +99,43 @@ public class PinsActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
     
-    void addPin(){
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+	    ContextMenuInfo menuInfo) {
+	  if (v.getId()== R.id.listview_pins) {	    
+	    menu.setHeaderTitle(R.string.menu_title_pinoptions);
+	    
+	    int id = R.string.menu_deletepin;    
+	    //add options
+	    menu.add(Menu.NONE, id, 0, id);	//use resource id as item id
+	  }
+	}
+	
+    @Override
+	public boolean onContextItemSelected(MenuItem item) {
+    	
+    	AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)item.getMenuInfo();
+    	
+    	if(item.getItemId() == R.string.menu_deletepin)
+    	{
+    		Pin pinToRemove = mAdapter.getItem(info.position);
+    		removePin(pinToRemove);
+    	}
+    	
+    	return true;
+	}
+
+	void addPin(){
     	Intent intent = new Intent(this, AddPinActivity.class);
     	super.startActivityForResult(intent, ADD_PIN_REQUEST);
     }
+	
+	void removePin(Pin pin){
+		
+		if(pin != null)
+		{
+			mAdapter.remove(pin);	//remove from list
+			mDBHandler.removePin(pin);	//remove from database
+		}
+	}
 }

@@ -21,7 +21,7 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="gus.apps.pinsafe.MasterPinActivity" />
         </activity>
-        <activity
+        <activity android:windowSoftInputMode="stateAlwaysVisible"
             android:name=".AddPinActivity"
             android:label="@string/title_activity_add_pin" >
         </activity>
