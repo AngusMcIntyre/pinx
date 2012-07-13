@@ -24,8 +24,9 @@ public final class R {
         public static final int editText_pinvalue=0x7f080001;
         public static final int edittext_masterpin=0x7f080002;
         public static final int listview_pins=0x7f080004;
-        public static final int menu_addpin=0x7f080006;
-        public static final int menu_deleteall=0x7f080007;
+        public static final int menu_addpin=0x7f080007;
+        public static final int menu_cancel=0x7f080006;
+        public static final int menu_deleteall=0x7f080008;
         public static final int menu_done=0x7f080005;
         public static final int textView_tip=0x7f080003;
     }
