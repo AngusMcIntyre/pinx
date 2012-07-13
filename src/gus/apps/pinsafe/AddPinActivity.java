@@ -56,7 +56,11 @@ public class AddPinActivity extends Activity {
                 return true;
             case R.id.menu_done:
             	onSubmit(null);
-            	break;
+            	return true;
+            case R.id.menu_cancel:
+            	finish();
+            	return true;
+            	
         }
         return super.onOptionsItemSelected(item);
     }

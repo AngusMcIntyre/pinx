@@ -68,7 +68,7 @@ public class PinDataBaseHandler extends SQLiteOpenHelper  {
         if(cursor.moveToFirst())
         {
 	        result.id = cursor.getInt(0);
-	        result.Label = cursor.getString(1);
+	        result.label = cursor.getString(1);
 	        result.value = PinEncoder.DecodePin(mMasterKey, cursor.getInt(2));
         }
         
@@ -92,7 +92,7 @@ public class PinDataBaseHandler extends SQLiteOpenHelper  {
                 Pin val = new Pin();
                 
                 val.id = cursor.getInt(0);
-                val.Label = cursor.getString(1);
+                val.label = cursor.getString(1);
                 val.value = PinEncoder.DecodePin(mMasterKey, cursor.getInt(2));
                 
                 // Adding contact to list
@@ -111,7 +111,7 @@ public class PinDataBaseHandler extends SQLiteOpenHelper  {
 		SQLiteDatabase db = this.getWritableDatabase();
 		
 		ContentValues values = new ContentValues();
-		values.put(KEY_NAME, pin.Label);
+		values.put(KEY_NAME, pin.label);
 		values.put(KEY_PIN, PinEncoder.EncodePin(mMasterKey, pin.value));
 		
 		int result = db.update(TABLE_PINS, values, KEY_ID + " = ?", new String[]{String.valueOf(pin.id)});

@@ -100,12 +100,17 @@ public class PinsActivity extends Activity {
     }
     
 	@Override
-	public void onCreateContextMenu(ContextMenu menu, View v,
-	    ContextMenuInfo menuInfo) {
-	  if (v.getId()== R.id.listview_pins) {	    
-	    menu.setHeaderTitle(R.string.menu_title_pinoptions);
+	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
+		
+		AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+		
+		Pin target = mAdapter.getItem(info.position);
+		
+		if (v.getId()== R.id.listview_pins) {
+			menu.setHeaderTitle(target.label);
+			//menu.setHeaderTitle(R.string.menu_title_pinoptions);
 	    
-	    int id = R.string.menu_deletepin;    
+	    int id = R.string.menu_deletepin;  
 	    //add options
 	    menu.add(Menu.NONE, id, 0, id);	//use resource id as item id
 	  }
