@@ -16,7 +16,10 @@
         android:hint="@string/enter_master_pin"
         android:inputType="numberDecimal"
         android:maxLength="4"
-        android:password="true">
+        android:password="true"
+        android:textSize="20dp"
+        android:imeOptions="flagNoExtractUi">
+
 		<requestFocus/>
 	</EditText>
 

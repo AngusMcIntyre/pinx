@@ -1,12 +1,11 @@
 <resources>
 
     <string name="app_name">PinSafe</string>
-    <string name="hello_world">Hello world!</string>
     <string name="menu_settings">Settings</string>
     <string name="title_activity_master_pin">PinSafe</string>
     <string name="add_pin">Add new PIN</string>
-    <string name="enter_master_pin">Enter master PIN</string>
-    <string name="pin_restriction_tip">4 digits only. Don\'t forget it!</string>
+    <string name="enter_master_pin">Enter a master PIN</string>
+    <string name="pin_restriction_tip">What is a master PIN? The master PIN is a secret used to encrypt your PIN numbers. It can be any number between 0 and 9999. This isn\'t a password, There is no right or wrong answer - try it and see!</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_add_pin">Add New Pin</string>
     <string name="delete_all_pins">Remove All</string>
