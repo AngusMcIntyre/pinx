@@ -23,6 +23,7 @@ public class PinsActivity extends Activity {
 	static final String EXTRA_PINLABEL = "gus.apps.pinsafe.EXTRA_PINLABEL";
 	
 	int mMasterKey = 0;
+	boolean mLaunchedChildActivity = false;
 	
 	PinDataBaseHandler mDBHandler = null;
 	ArrayAdapter<Pin> mAdapter = null;
@@ -37,16 +38,15 @@ public class PinsActivity extends Activity {
         }
         
         setContentView(R.layout.activity_pins);
-        
-        //get masterkey
-        mMasterKey = getIntent().getExtras().getInt(Constants.EXTRA_MASTERKEY);
-        
+    }
+    
+    void LoadPins()
+    {
         //grab the database handler
         mDBHandler = new PinDataBaseHandler(this, mMasterKey);
         
         List<Pin> allPins = mDBHandler.getAllPins();
         
-        // TODO -  read all the pins and apply to listview
         ListView lv = (ListView)findViewById(R.id.listview_pins);
         mAdapter = new ArrayAdapter<Pin>(this, android.R.layout.simple_list_item_1, allPins);
         lv.setAdapter(mAdapter);
@@ -55,7 +55,7 @@ public class PinsActivity extends Activity {
                 return PinsActivity.this.ShowPinOptions(mAdapter.getItem(pos));
             }
         });
-        
+                
         this.registerForContextMenu(lv); //make sure we get context menu event
     }
     
@@ -129,8 +129,36 @@ public class PinsActivity extends Activity {
     	
     	return true;
 	}
+    
+	@Override
+	protected void onStart() {
+		super.onStart();
+		
+		//get masterkey
+		mMasterKey = getIntent().getExtras().getInt(Constants.EXTRA_MASTERKEY);
+    	LoadPins(); //load pins
+	}
+	@Override
+	protected void onRestart() {
+		// TODO Auto-generated method stub
+		super.onRestart();
+		
+		if(!this.mLaunchedChildActivity){
+			this.finish();
+		}
+		this.mLaunchedChildActivity = false;
+	}
+	@Override
+	protected void onStop() {
+		// TODO Auto-generated method stub
+		super.onStop();
+		
+		ListView lv = (ListView)findViewById(R.id.listview_pins);
+        lv.setAdapter(null); //clear the adapter. Save no state ever.
+	}
 
 	void addPin(){
+		this.mLaunchedChildActivity = true;
     	Intent intent = new Intent(this, AddPinActivity.class);
     	super.startActivityForResult(intent, ADD_PIN_REQUEST);
     }
