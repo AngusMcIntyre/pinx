@@ -1,10 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="gus.apps.pinsafe"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.1" >
 
     <uses-sdk
-        android:minSdkVersion="7"
+        android:minSdkVersion="14"
         android:targetSdkVersion="15" />
 
     <application
@@ -26,6 +26,15 @@
             android:name=".AddPinActivity"
             android:label="@string/title_activity_add_pin" >
         </activity>
+        
+        <receiver android:name="gus.apps.pinsafe.KeyPadWidgetProvider" >
+		    <intent-filter>
+		        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+		        <action android:name="gus.apps.pinsafe.KEYPADWIDGET_KEYPRESS"/>
+		    </intent-filter>
+		    <meta-data android:name="android.appwidget.provider"
+		               android:resource="@xml/keypad_widget_info" />
+		</receiver>
     </application>
 
 </manifest>

@@ -4,8 +4,8 @@
     <string name="menu_settings">Settings</string>
     <string name="title_activity_master_pin">PinSafe</string>
     <string name="add_pin">Add new PIN</string>
-    <string name="enter_master_pin">Enter a master PIN</string>
-    <string name="pin_restriction_tip">What is a master PIN? The master PIN is a secret used to encrypt your PIN numbers. It can be any number between 0 and 9999. This isn\'t a password, There is no right or wrong answer - try it and see!</string>
+    <string name="enter_master_pin">Enter your master PIN</string>
+    <string name="pin_restriction_tip">Your master PIN is a secret used to encrypt your PIN numbers. It can be any number between 0 and 9999. This isn\'t a password, there is no right or wrong answer.</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="title_activity_add_pin">Add New Pin</string>
     <string name="delete_all_pins">Remove All</string>
@@ -13,4 +13,16 @@
     <string name="add_pin_valuehint">PIN Value</string>
     <string name="menu_deletepin">Delete PIN</string>
     <string name="menu_title_pinoptions">PIN Options</string>
+    <string name="keypad_clear">Clear</string>
+    <string name="keypad_one">1</string>
+    <string name="keypad_two">2</string>
+    <string name="keypad_three">3</string>
+    <string name="keypad_four">4</string>
+    <string name="keypad_five">5</string>
+    <string name="keypad_six">6</string>
+    <string name="keypad_seven">7</string>
+    <string name="keypad_eight">8</string>
+    <string name="keypad_nine">9</string>
+    <string name="keypad_zero">0</string>
+    
 </resources>
