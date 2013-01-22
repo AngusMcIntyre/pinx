@@ -24,5 +24,8 @@
     <string name="keypad_eight">8</string>
     <string name="keypad_nine">9</string>
     <string name="keypad_zero">0</string>
-    
+    <string name="ChangeLog_Title">What\'s new?</string>
+    <string name="ChangeLog_Body">Version 1.2\r\n\r\n
+        • Small security update. If you switch to another app while viewing your PINs, you will be returned to the main screen.\r\n
+        • Added a keypad widget. Provides quick access to PinSafe from your home screens and lock screen</string>  
 </resources>

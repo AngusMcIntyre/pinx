@@ -5,6 +5,7 @@ import java.util.List;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.NavUtils;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
@@ -16,7 +17,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class PinsActivity extends Activity {
+public class PinsActivity extends FragmentActivity {
 
 	static final int ADD_PIN_REQUEST = 1;
 	static final String EXTRA_PINVALUE = "gus.apps.pinsafe.EXTRA_PINVALUE";
@@ -38,6 +39,8 @@ public class PinsActivity extends Activity {
         }
         
         setContentView(R.layout.activity_pins);
+        
+        ChangeLogDisplayer.ShowComplete(this, this.getSupportFragmentManager());
     }
     
     void LoadPins()

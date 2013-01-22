@@ -58,6 +58,8 @@ public final class R {
         public static final int activity_pins=0x7f080001;
     }
     public static final class string {
+        public static final int ChangeLog_Body=0x7f060019;
+        public static final int ChangeLog_Title=0x7f060018;
         public static final int add_pin=0x7f060003;
         public static final int add_pin_addhint=0x7f060009;
         public static final int add_pin_valuehint=0x7f06000a;

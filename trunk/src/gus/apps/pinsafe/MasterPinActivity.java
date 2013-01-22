@@ -3,6 +3,7 @@ package gus.apps.pinsafe;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -13,7 +14,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
-public class MasterPinActivity extends Activity {
+public class MasterPinActivity extends FragmentActivity  {
 
 	final String TAG = "gus.apps.pinsafe.MasterPinActivity"; 
 	
@@ -50,6 +51,8 @@ public class MasterPinActivity extends Activity {
 			}
         
         });
+        
+        ChangeLogDisplayer.ShowComplete(this, this.getSupportFragmentManager());
     }   
     
         
