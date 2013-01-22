@@ -3,7 +3,7 @@
     <dimen name="padding_small">8dp</dimen>
     <dimen name="padding_medium">16dp</dimen>
     <dimen name="padding_large">16dp</dimen>
-    <dimen name="text_small">18dp</dimen>
+    <dimen name="text_small">26dp</dimen>
     <dimen name="keypadbutton_height">46dip</dimen>
     <dimen name="keypad_button_width">46dip</dimen>
 </resources>

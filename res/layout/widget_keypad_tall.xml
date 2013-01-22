@@ -1,111 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
-    android:orientation="vertical" >
+    android:layout_gravity="center" >
 
-    <TextView
-        android:id="@+id/keypadwidget_title"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="@dimen/text_small" />
+        android:layout_gravity="center"
+        android:orientation="vertical" >
 
-    <GridLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:columnCount="3" >
-
-        <Button
-            android:id="@+id/keypad_one"
-            style="@style/style_keypad_button"
+        <TextView
+            android:id="@+id/keypadwidget_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tag="1"
-            android:text="@string/keypad_one" />
+            android:layout_marginLeft="@dimen/padding_small"
+            android:text="@string/app_name"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/text_small" />
 
-        <Button
-            android:id="@+id/keypad_two"
-            style="@style/style_keypad_button"
+        <GridLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:tag="2"
-            android:text="@string/keypad_two" />
+            android:layout_gravity="center_horizontal"
+            android:columnCount="3" >
 
-        <Button
-            android:id="@+id/keypad_three"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="3"
-            android:text="@string/keypad_three" />
+            <Button
+                android:id="@+id/keypad_one"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="1"
+                android:text="@string/keypad_one" />
 
-        <Button
-            android:id="@+id/keypad_four"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="4"
-            android:text="@string/keypad_four" />
+            <Button
+                android:id="@+id/keypad_two"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="2"
+                android:text="@string/keypad_two" />
 
-        <Button
-            android:id="@+id/keypad_five"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="5"
-            android:text="@string/keypad_five" />
+            <Button
+                android:id="@+id/keypad_three"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="3"
+                android:text="@string/keypad_three" />
 
-        <Button
-            android:id="@+id/keypad_six"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="6"
-            android:text="@string/keypad_six" />
+            <Button
+                android:id="@+id/keypad_four"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="4"
+                android:text="@string/keypad_four" />
 
-        <Button
-            android:id="@+id/keypad_seven"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="7"
-            android:text="@string/keypad_seven" />
+            <Button
+                android:id="@+id/keypad_five"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="5"
+                android:text="@string/keypad_five" />
 
-        <Button
-            android:id="@+id/keypad_eight"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="8"
-            android:text="@string/keypad_eight" />
+            <Button
+                android:id="@+id/keypad_six"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="6"
+                android:text="@string/keypad_six" />
 
-        <Button
-            android:id="@+id/keypad_nine"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="9"
-            android:text="@string/keypad_nine" />
+            <Button
+                android:id="@+id/keypad_seven"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="7"
+                android:text="@string/keypad_seven" />
 
-        <Button
-            android:id="@+id/keypad_zero"
-            style="@style/style_keypad_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:tag="0"
-            android:text="@string/keypad_zero" />
+            <Button
+                android:id="@+id/keypad_eight"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="8"
+                android:text="@string/keypad_eight" />
 
-        <Button
-            android:id="@+id/keypad_clear"
-            style="@style/style_keypad_button"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
-            android:text="@string/keypad_clear" />
+            <Button
+                android:id="@+id/keypad_nine"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="9"
+                android:text="@string/keypad_nine" />
 
-    </GridLayout>
+            <Button
+                android:id="@+id/keypad_zero"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="0"
+                android:text="@string/keypad_zero" />
 
-</LinearLayout>
+            <Button
+                android:id="@+id/keypad_clear"
+                style="@style/style_keypad_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_columnSpan="2"
+                android:text="@string/keypad_clear" />
+        </GridLayout>
+    </LinearLayout>
+
+</FrameLayout>
